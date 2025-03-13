@@ -1,0 +1,423 @@
+/* Symptom Capture Page Styles */
+.symptom-capture-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.capture-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.capture-header h1 {
+  color: #0066cc;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.capture-header p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Language Selector */
+.language-selector {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.language-selector label {
+  font-weight: 500;
+  color: #444;
+}
+
+.language-selector select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
+  min-width: 150px;
+  cursor: pointer;
+}
+
+/* Voice Input Section */
+.voice-input-section {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.voice-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.record-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+}
+
+.record-button:hover {
+  background-color: #0055aa;
+  transform: translateY(-2px);
+}
+
+.record-button.recording {
+  background-color: #cc0000;
+  animation: pulse 1.5s infinite;
+}
+
+.record-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.recording-indicator {
+  color: #cc0000;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recording-indicator::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #cc0000;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.transcript-container {
+  margin-top: 20px;
+}
+
+.transcript-container h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.transcript-container textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* File Upload Section */
+.file-upload-section {
+  background-color: #f0f8ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.file-upload-section h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.file-upload-section p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.upload-controls {
+  margin-bottom: 20px;
+}
+
+.upload-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+}
+
+.upload-button:hover {
+  background-color: #f0f8ff;
+  transform: translateY(-2px);
+}
+
+.upload-button:disabled {
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.uploaded-files {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.uploaded-files h4 {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+
+.uploaded-files ul {
+  list-style: none;
+  padding: 0;
+}
+
+.uploaded-files li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.uploaded-files li:last-child {
+  border-bottom: none;
+}
+
+.uploaded-files li i {
+  color: #0066cc;
+  margin-right: 10px;
+}
+
+.uploaded-files li span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove-file {
+  background: none;
+  border: none;
+  color: #cc0000;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.remove-file:hover {
+  transform: scale(1.2);
+}
+
+.remove-file:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Submission Section */
+.submission-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.submit-button, .clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.submit-button {
+  background-color: #0066cc;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #0055aa;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
+}
+
+.clear-button {
+  background-color: #f2f2f2;
+  color: #666;
+}
+
+.clear-button:hover {
+  background-color: #e6e6e6;
+  transform: translateY(-3px);
+}
+
+.submit-button:disabled, .clear-button:disabled {
+  background-color: #cccccc;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success Container */
+.success-container {
+  text-align: center;
+  padding: 40px;
+  background-color: #f0fff4;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #00cc66;
+  margin-bottom: 20px;
+}
+
+.success-container h2 {
+  color: #00994d;
+  margin-bottom: 15px;
+}
+
+.success-container p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.primary-button, .secondary-button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.primary-button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+}
+
+.secondary-button {
+  background-color: white;
+  color: #0066cc;
+  border: 1px solid #0066cc;
+}
+
+.primary-button:hover, .secondary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .capture-header h1 {
+    font-size: 2rem;
+  }
+  
+  .submission-section {
+    flex-direction: column;
+  }
+  
+  .success-actions {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Add these styles to your existing SymptomCapturePage.css file */
+
+.transcript-wrapper {
+  position: relative;
+}
+
+.transcript-wrapper textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  line-height: 1.5;
+  resize: vertical;
+  background-color: white;
+}
+
+.interim-transcript {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  pointer-events: none;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.interim-text {
+  color: #666;
+  background-color: rgba(173, 216, 230, 0.2);
+  border-radius: 3px;
+}
+
+/* When recording, hide the actual textarea text but keep it functional */
+.transcript-wrapper.recording textarea {
+  color: transparent;
+  caret-color: #333; /* Keep cursor visible for editing */
+} 
