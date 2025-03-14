@@ -19,6 +19,32 @@ MedConnect is an AI-driven patient-doctor matching platform that helps patients 
 - Intelligent doctor matching based on identified specialties
 - Easy appointment booking with filtering options
 
+## Packages and Dependencies
+
+### Backend Dependencies
+The backend of MedConnect uses the following packages:
+- **@google/generative-ai**: For AI functionalities.
+- **axios**: For making HTTP requests.
+- **cors**: For enabling Cross-Origin Resource Sharing.
+- **dotenv**: For loading environment variables from a `.env` file.
+- **express**: For building the web server.
+- **mongodb**: For interacting with the MongoDB database.
+- **multer**: For handling file uploads.
+- **openai**: For integrating OpenAI's API.
+- **pdf-parse**: For parsing PDF files.
+
+### Frontend Dependencies
+The frontend of MedConnect uses the following packages:
+- **@testing-library/dom**: For testing DOM elements.
+- **@testing-library/jest-dom**: For custom Jest matchers.
+- **@testing-library/react**: For testing React components.
+- **@testing-library/user-event**: For simulating user events.
+- **react**: The core library for building user interfaces.
+- **react-dom**: For DOM-related rendering.
+- **react-router-dom**: For routing in React applications.
+- **react-scripts**: For running scripts related to Create React App.
+- **web-vitals**: For measuring performance metrics.
+
 ## Setup & Installation
 For detailed installation instructions, please refer to [INSTALLATION.md](./INSTALLATION.md)
 
@@ -30,7 +56,6 @@ For detailed installation instructions, please refer to [INSTALLATION.md](./INST
 3. Optionally upload any medical reports you have
 4. Review the list of recommended specialists
 5. Filter by location, fees, or reviews
-6. Book an appointment with your chosen doctor
 
 ### For Doctors:
 1. Click "Add Your Profile" on the homepage
