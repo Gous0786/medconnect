@@ -5,7 +5,6 @@ require('dotenv').config();
 console.log('Environment variables loaded:', {
     port: process.env.PORT,
     mongoUri: process.env.MONGODB_URI?.substring(0, 20) + '...', // Only show start of URI for security
-    hasDeepseekKey: !!process.env.DEEPSEEK_API_KEY
 });
 
 const express = require('express');
@@ -14,7 +13,7 @@ const cors = require('cors');
 const { processReport } = require('./services/reportProcessor');
 const { createSymptomRecord } = require('./services/symptomService');
 const { MongoClient } = require('mongodb');
-const { createDoctorRecord } = require('./services/doctorService');
+const { createDoctorRecord, findDoctors } = require('./services/doctorService');
 
 const app = express();
 const upload = multer({
@@ -79,6 +78,10 @@ app.post('/api/symptoms',
         const specialties = await processReport(symptomDescription, reportFiles, language);
         console.log('Identified specialties:', specialties);
 
+        // Find doctors based on specialties
+        const doctors = await findDoctors(specialties);
+        console.log(`Found ${doctors.length} matching doctors`);
+
         // Create a new symptom record in database
         const symptomRecord = await createSymptomRecord({
             description: symptomDescription,
@@ -93,13 +96,13 @@ app.post('/api/symptoms',
             data: {
                 recordId: symptomRecord._id,
                 specialties,
-                message: specialties.length > 0 
-                    ? `Identified ${specialties.length} specialties`
-                    : 'No specialties identified'
+                doctors,
+                message: doctors.length > 0 
+                    ? `Found ${doctors.length} matching doctors across ${specialties.length} specialties`
+                    : 'No matching doctors found for the identified specialties'
             }
         });
     } catch (error) {
-        // Pass error to error handling middleware
         next(error);
     }
 });
@@ -121,6 +124,27 @@ app.post('/api/doctors', async (req, res, next) => {
             success: true,
             message: 'Doctor profile added successfully',
             data: newDoctor
+        });
+    } catch (error) {
+        next(error);
+    }
+});
+
+// Add new route for fetching doctors
+app.get('/api/doctors', async (req, res, next) => {
+    try {
+        const specialties = req.query.specialties ? req.query.specialties.split(',') : []; // Split specialties into an array
+        console.log('Received specialties for doctor search:', specialties); // Log the received specialties
+
+        const doctors = await findDoctors(specialties); // Call the findDoctors function with the specialties
+        
+        console.log('Doctors found:', doctors); // Log the doctors found
+        
+        res.json({
+            success: true,
+            data: doctors,
+            total: doctors.length,
+            message: `Found ${doctors.length} doctors matching your criteria`
         });
     } catch (error) {
         next(error);

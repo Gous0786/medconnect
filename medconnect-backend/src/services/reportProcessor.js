@@ -8,7 +8,6 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 async function processReport(description, reportFiles, language) {
     try {
         let medicalContent = `Patient Description: ${description}`;
-
         // Process each report file
         if (reportFiles && reportFiles.length > 0) {
             for (const file of reportFiles) {
@@ -43,6 +42,15 @@ async function processReport(description, reportFiles, language) {
                 if (reportContent.trim()) {
                     medicalContent += `\n\nMedical Report (${file.originalname}):\n${reportContent}`;
                 }
+
+                // Cleanup: Delete the uploaded file after processing
+                fs.unlink(file.path, (err) => {
+                    if (err) {
+                        console.error(`Error deleting file ${file.originalname}:`, err);
+                    } else {
+                        console.log(`Successfully deleted file ${file.originalname}`);
+                    }
+                });
             }
         }
 
@@ -77,14 +85,8 @@ cardiology, neurology, endocrinology`
         const response = await result.response;
         console.log('Gemini API Response:', response.text());
 
-        // Clean up uploaded files
-        reportFiles.forEach(file => {
-            fs.unlink(file.path, (err) => {
-                if (err) console.error('Error deleting file:', err);
-            });
-        });
-
         const specialties = parseSpecialties(response.text());
+        console.log('Parsed Specialties:', specialties);
         return specialties;
     } catch (error) {
         console.error('Error details:', {

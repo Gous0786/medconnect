@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/DoctorRecommendationsPage.css';
+import DoctorCard from '../components/DoctorCard';
 
 const DoctorRecommendationsPage = () => {
   const navigate = useNavigate();
@@ -31,83 +32,6 @@ const DoctorRecommendationsPage = () => {
   const filteredDoctors = selectedSpecialty === 'all' 
     ? allDoctors 
     : allDoctors.filter(doctor => doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase());
-
-  const DoctorCard = ({ doctor }) => (
-    <div className="doctor-card">
-      <div className="doctor-image">
-        <i className="fas fa-user-md"></i>
-      </div>
-      <div className="doctor-info">
-        <h2>{doctor.name}</h2>
-        <p className="specialty">{doctor.specialty.charAt(0).toUpperCase() + doctor.specialty.slice(1)}</p>
-        
-        <div className="doctor-qualifications">
-          {doctor.qualifications.map((qual, index) => (
-            <span key={index} className="qualification-badge">
-              {qual}
-            </span>
-          ))}
-        </div>
-
-        <div className="doctor-details">
-          <p>
-            <i className="fas fa-hospital"></i>
-            {doctor.hospital}
-          </p>
-          <p>
-            <i className="fas fa-map-marker-alt"></i>
-            {doctor.location}
-          </p>
-          <p>
-            <i className="fas fa-graduation-cap"></i>
-            {doctor.experience} years experience
-          </p>
-          <p>
-            <i className="fas fa-language"></i>
-            {doctor.languages.join(', ')}
-          </p>
-          <p>
-            <i className="fas fa-rupee-sign"></i>
-            Consultation: ₹{doctor.fee}
-          </p>
-          <p>
-            <i className="fas fa-clock"></i>
-            {doctor.timing}
-          </p>
-          <p>
-            <i className="fas fa-users"></i>
-            {doctor.totalPatients.toLocaleString()} patients treated
-          </p>
-        </div>
-
-        <div className="doctor-rating">
-          <div className="stars">
-            {[...Array(5)].map((_, i) => (
-              <i
-                key={i}
-                className={`fas fa-star ${i < Math.floor(doctor.rating) ? 'filled' : ''}`}
-              ></i>
-            ))}
-          </div>
-          <span>{doctor.rating.toFixed(1)}</span>
-        </div>
-      </div>
-
-      <div className="doctor-actions">
-        <button 
-          className={`book-appointment ${!doctor.isAvailable ? 'disabled' : ''}`}
-          disabled={!doctor.isAvailable}
-        >
-          <i className="fas fa-calendar-check"></i>
-          {doctor.isAvailable ? 'Book Appointment' : 'Not Available'}
-        </button>
-        <button className="view-profile">
-          <i className="fas fa-user"></i>
-          View Profile
-        </button>
-      </div>
-    </div>
-  );
 
   return (
     <div className="recommendations-container">

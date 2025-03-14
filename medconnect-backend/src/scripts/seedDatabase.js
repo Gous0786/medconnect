@@ -85,6 +85,321 @@ const doctors = [
         rating: 4.5,
         totalPatients: 3500,
         isAvailable: true
+    },
+    // Cardiology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Vikram Sharma",
+        specialty: "cardiology",
+        location: "New Delhi",
+        fee: 2500,
+        qualifications: ["MBBS", "MD", "DM Cardiology"],
+        experience: 16,
+        timing: "Mon-Fri: 9:00 AM - 5:00 PM",
+        hospital: "Max Super Speciality Hospital",
+        rating: 4.9,
+        totalPatients: 6800,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Anita Desai",
+        specialty: "cardiology",
+        location: "Mumbai",
+        fee: 2200,
+        qualifications: ["MBBS", "MD", "DNB Cardiology", "FACC"],
+        experience: 12,
+        timing: "Mon-Sat: 10:00 AM - 4:00 PM",
+        hospital: "Kokilaben Dhirubhai Ambani Hospital",
+        rating: 4.7,
+        totalPatients: 5200,
+        isAvailable: true
+    },
+    
+    // Neurology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Sunil Narayan",
+        specialty: "neurology",
+        location: "Bangalore",
+        fee: 2300,
+        qualifications: ["MBBS", "MD", "DM Neurology"],
+        experience: 14,
+        timing: "Tue-Sun: 10:00 AM - 6:00 PM",
+        hospital: "Narayana Hrudayalaya",
+        rating: 4.8,
+        totalPatients: 5800,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Leela Menon",
+        specialty: "neurology",
+        location: "Chennai",
+        fee: 2100,
+        qualifications: ["MBBS", "MD", "DM Neurology", "Fellowship in Stroke Medicine"],
+        experience: 11,
+        timing: "Mon-Fri: 9:00 AM - 5:00 PM",
+        hospital: "Apollo Hospitals",
+        rating: 4.6,
+        totalPatients: 4900,
+        isAvailable: true
+    },
+    
+    // Orthopedics
+    {
+        _id: new ObjectId(),
+        name: "Dr. Harpreet Singh",
+        specialty: "orthopedics",
+        location: "Chandigarh",
+        fee: 1800,
+        qualifications: ["MBBS", "MS Orthopedics", "Fellowship in Joint Replacement"],
+        experience: 18,
+        timing: "Mon-Sat: 9:00 AM - 3:00 PM",
+        hospital: "PGIMER",
+        rating: 4.9,
+        totalPatients: 7200,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Farhan Ahmed",
+        specialty: "orthopedics",
+        location: "Hyderabad",
+        fee: 1700,
+        qualifications: ["MBBS", "DNB Orthopedics"],
+        experience: 9,
+        timing: "Mon-Fri: 5:00 PM - 9:00 PM",
+        hospital: "Care Hospitals",
+        rating: 4.5,
+        totalPatients: 3900,
+        isAvailable: true
+    },
+    
+    // Dermatology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Shalini Kapoor",
+        specialty: "dermatology",
+        location: "New Delhi",
+        fee: 1600,
+        qualifications: ["MBBS", "MD Dermatology"],
+        experience: 10,
+        timing: "Mon-Wed-Fri: 11:00 AM - 7:00 PM",
+        hospital: "Skin & Aesthetic Clinic",
+        rating: 4.8,
+        totalPatients: 8500,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Vivek Malhotra",
+        specialty: "dermatology",
+        location: "Mumbai",
+        fee: 1900,
+        qualifications: ["MBBS", "DVD", "FAAD"],
+        experience: 15,
+        timing: "Tue-Thu-Sat: 10:00 AM - 6:00 PM",
+        hospital: "Bombay Skin Clinic",
+        rating: 4.9,
+        totalPatients: 9200,
+        isAvailable: true
+    },
+    
+    // Ophthalmology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Kiran Rao",
+        specialty: "ophthalmology",
+        location: "Bangalore",
+        fee: 1400,
+        qualifications: ["MBBS", "MS Ophthalmology", "Fellowship in Cornea"],
+        experience: 12,
+        timing: "Mon-Sat: 9:00 AM - 5:00 PM",
+        hospital: "Narayana Nethralaya",
+        rating: 4.7,
+        totalPatients: 6100,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Thomas Kurian",
+        specialty: "ophthalmology",
+        location: "Kochi",
+        fee: 1300,
+        qualifications: ["MBBS", "DO", "DNB Ophthalmology"],
+        experience: 20,
+        timing: "Mon-Fri: 10:00 AM - 4:00 PM",
+        hospital: "Lisie Hospital",
+        rating: 4.8,
+        totalPatients: 12000,
+        isAvailable: true
+    },
+    
+    // ENT (Otolaryngology)
+    {
+        _id: new ObjectId(),
+        name: "Dr. Neha Sharma",
+        specialty: "ent",
+        location: "Pune",
+        fee: 1500,
+        qualifications: ["MBBS", "MS ENT"],
+        experience: 8,
+        timing: "Mon-Fri: 10:00 AM - 6:00 PM",
+        hospital: "Ruby Hall Clinic",
+        rating: 4.6,
+        totalPatients: 4800,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Mahesh Nair",
+        specialty: "ent",
+        location: "Chennai",
+        fee: 1600,
+        qualifications: ["MBBS", "DLO", "DNB Otorhinolaryngology"],
+        experience: 14,
+        timing: "Mon-Sat: 9:00 AM - 3:00 PM",
+        hospital: "Chennai ENT Hospital",
+        rating: 4.7,
+        totalPatients: 5600,
+        isAvailable: true
+    },
+    
+    // Pulmonology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Aditi Joshi",
+        specialty: "pulmonology",
+        location: "New Delhi",
+        fee: 1800,
+        qualifications: ["MBBS", "MD", "DM Pulmonary Medicine"],
+        experience: 11,
+        timing: "Mon-Fri: 9:00 AM - 5:00 PM",
+        hospital: "Sir Ganga Ram Hospital",
+        rating: 4.7,
+        totalPatients: 5100,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Sanjay Gupta",
+        specialty: "pulmonology",
+        location: "Lucknow",
+        fee: 1600,
+        qualifications: ["MBBS", "MD Chest Medicine", "Fellowship in Interventional Pulmonology"],
+        experience: 16,
+        timing: "Mon-Sat: 10:00 AM - 4:00 PM",
+        hospital: "SGPGI",
+        rating: 4.8,
+        totalPatients: 6700,
+        isAvailable: true
+    },
+    
+    // Psychiatry
+    {
+        _id: new ObjectId(),
+        name: "Dr. Maya Srinivasan",
+        specialty: "psychiatry",
+        location: "Bangalore",
+        fee: 2000,
+        qualifications: ["MBBS", "MD Psychiatry"],
+        experience: 9,
+        timing: "Mon-Wed-Fri: 11:00 AM - 7:00 PM",
+        hospital: "NIMHANS",
+        rating: 4.9,
+        totalPatients: 3800,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Arjun Mathur",
+        specialty: "psychiatry",
+        location: "Mumbai",
+        fee: 2200,
+        qualifications: ["MBBS", "DPM", "MRCPsych"],
+        experience: 12,
+        timing: "Tue-Thu-Sat: 10:00 AM - 6:00 PM",
+        hospital: "Mind Temple Clinic",
+        rating: 4.8,
+        totalPatients: 4300,
+        isAvailable: true
+    },
+    
+    // Gynecology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Ritu Khanna",
+        specialty: "gynecology",
+        location: "New Delhi",
+        fee: 1900,
+        qualifications: ["MBBS", "MD Obstetrics & Gynecology"],
+        experience: 18,
+        timing: "Mon-Sat: 10:00 AM - 2:00 PM",
+        hospital: "Fortis La Femme",
+        rating: 4.9,
+        totalPatients: 11000,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Lakshmi Rajagopal",
+        specialty: "gynecology",
+        location: "Chennai",
+        fee: 1700,
+        qualifications: ["MBBS", "DGO", "DNB Obstetrics & Gynecology"],
+        experience: 14,
+        timing: "Mon-Fri: 9:00 AM - 5:00 PM",
+        hospital: "Apollo Cradle",
+        rating: 4.8,
+        totalPatients: 9800,
+        isAvailable: true
+    },
+    
+    // Pediatrics
+    {
+        _id: new ObjectId(),
+        name: "Dr. Zoya Khan",
+        specialty: "pediatrics",
+        location: "Mumbai",
+        fee: 1500,
+        qualifications: ["MBBS", "DCH", "DNB Pediatrics"],
+        experience: 10,
+        timing: "Mon-Sat: 9:00 AM - 2:00 PM",
+        hospital: "Surya Children's Hospital",
+        rating: 4.7,
+        totalPatients: 8200,
+        isAvailable: true
+    },
+    {
+        _id: new ObjectId(),
+        name: "Dr. Vikrant Singh",
+        specialty: "pediatrics",
+        location: "Jaipur",
+        fee: 1300,
+        qualifications: ["MBBS", "MD Pediatrics", "Fellowship in Pediatric Neurology"],
+        experience: 12,
+        timing: "Mon-Fri: 10:00 AM - 6:00 PM",
+        hospital: "JK Lon Hospital",
+        rating: 4.6,
+        totalPatients: 7500,
+        isAvailable: true
+    },
+    
+    // Urology
+    {
+        _id: new ObjectId(),
+        name: "Dr. Rohit Mehta",
+        specialty: "urology",
+        location: "Delhi",
+        fee: 2100,
+        qualifications: ["MBBS", "MS", "MCh Urology"],
+        experience: 15,
+        timing: "Mon-Fri: 9:00 AM - 5:00 PM",
+        hospital: "Medanta Hospital",
+        rating: 4.8,
+        totalPatients: 6300,
+        isAvailable: true
     }
 ];
 
