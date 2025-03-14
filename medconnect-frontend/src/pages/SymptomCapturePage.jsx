@@ -14,7 +14,7 @@ const SymptomCapturePage = () => {
 
   // Initialize speech recognition
   useEffect(() => {
-    if (!('webkitSpeechRecognition' in window)) {
+    if (!('SpeechRecognition' in window || 'webkitSpeechRecognition' in window)) {
       alert('Your browser does not support speech recognition. Please use Google Chrome.');
       return;
     }

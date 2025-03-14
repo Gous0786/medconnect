@@ -6,6 +6,7 @@ import DoctorCard from '../components/DoctorCard';
 const DoctorRecommendationsPage = () => {
   const navigate = useNavigate();
   const [selectedSpecialty, setSelectedSpecialty] = useState('all');
+  const [sortBy, setSortBy] = useState('experience'); // Default sort by experience
 
   // Get recommendations from localStorage instead of making an API call
   const storedData = localStorage.getItem('doctorRecommendations');
@@ -33,6 +34,15 @@ const DoctorRecommendationsPage = () => {
     ? allDoctors 
     : allDoctors.filter(doctor => doctor.specialty.toLowerCase() === selectedSpecialty.toLowerCase());
 
+  // Sort doctors based on selected criteria
+  const sortedDoctors = filteredDoctors.sort((a, b) => {
+    if (sortBy === 'fee') {
+      return a.fee - b.fee; // Sort by consultation fee
+    } else {
+      return b.experience - a.experience; // Sort by experience (descending)
+    }
+  });
+
   return (
     <div className="recommendations-container">
       <div className="recommendations-header">
@@ -56,13 +66,25 @@ const DoctorRecommendationsPage = () => {
         </select>
       </div>
 
+      <div className="sort-by">
+        <label htmlFor="sort-select">Sort by:</label>
+        <select
+          id="sort-select"
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+        >
+          <option value="experience">Experience</option>
+          <option value="fee">Consultation Fee</option>
+        </select>
+      </div>
+
       <div className="doctors-grid">
-        {filteredDoctors.map((doctor) => (
+        {sortedDoctors.map((doctor) => (
           <DoctorCard key={doctor.id} doctor={doctor} />
         ))}
       </div>
 
-      {filteredDoctors.length === 0 && (
+      {sortedDoctors.length === 0 && (
         <div className="no-results">
           <i className="fas fa-search"></i>
           <h2>No doctors found</h2>
