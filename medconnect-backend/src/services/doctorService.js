@@ -50,7 +50,7 @@ async function createDoctorRecord(doctorData) {
         const result = await db.collection('doctors').insertOne({
             ...doctorData,
             createdAt: new Date(),
-            isAvailable: doctorData.isAvailable || false // Default to false if not provided
+            isAvailable: doctorData.isAvailable || true // Default to true if not provided
         });
 
         return {

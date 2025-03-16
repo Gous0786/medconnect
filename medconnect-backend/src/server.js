@@ -4,7 +4,7 @@ require('dotenv').config();
 // Add debug logging
 console.log('Environment variables loaded:', {
     port: process.env.PORT,
-    mongoUri: process.env.MONGODB_URI?.substring(0, 20) + '...', // Only show start of URI for security
+    mongoUri: process.env.MONGODB_URI?.substring(0, 20) + '...', // starting part of uri;>
 });
 
 const express = require('express');

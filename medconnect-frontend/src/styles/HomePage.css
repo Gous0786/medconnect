@@ -134,41 +134,6 @@ h1 {
   line-height: 1.6;
 }
 
-/* Languages Section */
-.languages-section {
-  padding: 60px 0;
-  text-align: center;
-  background-color: #f0f8ff;
-  border-radius: 10px;
-  margin: 40px 0;
-}
-
-.languages-section h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.language-pills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.language-pill {
-  background-color: white;
-  color: #0066cc;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.language-pill.more {
-  background-color: #0066cc;
-  color: white;
-}
-
 /* How It Works Section */
 .how-it-works {
   padding: 80px 0;

@@ -44,6 +44,7 @@ The frontend of MedConnect uses the following packages:
 - **react-router-dom**: For routing in React applications.
 - **react-scripts**: For running scripts related to Create React App.
 - **web-vitals**: For measuring performance metrics.
+- **Web Speech API**: For voice recognition and input of symptoms.
 
 ## Setup & Installation
 For detailed installation instructions, please refer to [INSTALLATION.md](./INSTALLATION.md)

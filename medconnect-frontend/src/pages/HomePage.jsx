@@ -59,16 +59,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section className="languages-section">
-        <h2>Supporting 22+ Indian Languages</h2>
-        <div className="language-pills">
-          {['Hindi', 'Tamil', 'Bengali', 'Telugu', 'Marathi', 'Gujarati', 'Kannada', 'Malayalam'].map(lang => (
-            <span key={lang} className="language-pill">{lang}</span>
-          ))}
-          <span className="language-pill more">+14 more</span>
-        </div>
-      </section>
-
       <section className="how-it-works">
         <h2>Your Path to Better Healthcare</h2>
         <div className="steps-container">
