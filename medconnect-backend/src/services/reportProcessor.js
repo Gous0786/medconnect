@@ -56,7 +56,6 @@ async function processReport(description, reportFiles, language) {
 
         console.log('Sending request to Gemini API');
 
-        // Updated model name to gemini-2.0-flash
         const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
         // Create content in the correct format
@@ -112,7 +111,7 @@ function cleanReportContent(content) {
 }
 
 function parseSpecialties(aiResponse) {
-    // Simple parsing - you might want to make this more sophisticated
+    // Simple parsing 
     const specialties = aiResponse.toLowerCase()
         .split(',')
         .map(s => s.trim())

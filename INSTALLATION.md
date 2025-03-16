@@ -63,7 +63,7 @@ Before you begin, ensure you have the following installed on your machine:
    ```bash
    npm start
    ```
-   The application should open automatically in your default browser at http://localhost:3000
+   The application should open on port 5001(by default) or the port specified in .env file
 
 ## Verifying the Installation
 
@@ -92,7 +92,7 @@ You can test the API by sending a GET request to http://localhost:5000/api/docto
    - Check package.json files for consistency
 
 4. **CORS Issues**:
-   - Ensure the frontend URL is included in the allowed origins in server.js
+   - Ensure the frontend URL is included in the allowed origins in server.js its port 5001 for frontend and 5000  for backend by the way
 
 ## Additional Setup Options
 

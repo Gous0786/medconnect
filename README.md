@@ -149,4 +149,4 @@ For detailed installation instructions, please refer to [INSTALLATION.md](./INST
   ```
 
 ## Demo Video Link
-[Coming Soon] A short demo showcasing the MedConnect prototype in action.
+[Watch the Demo Video](https://youtu.be/5EY6k4h68Wk) - A short demo showcasing the MedConnect prototype in action.

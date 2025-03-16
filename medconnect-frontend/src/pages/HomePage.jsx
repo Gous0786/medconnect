@@ -85,12 +85,10 @@ const HomePage = () => {
         </div>
       </section>
 
-    
-
       <section className="cta-section">
         <h2>Ready to Find Your Perfect Doctor Match?</h2>
         <p>Join thousands of patients who have found the right healthcare with MedConnect</p>
-        <Link to="/get-started" className="cta-button primary large">Get Started Now</Link>
+        <Link to="/symptom-capture" className="cta-button primary large">Get Started Now</Link>
       </section>
     </div>
   );
