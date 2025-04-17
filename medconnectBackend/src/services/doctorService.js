@@ -12,7 +12,7 @@ async function findDoctors(specialties) {
           
         const db = client.db();
 
-        // Find doctors that match any of the specialties (case-insensitive)
+        // Find doctors that match any of the specialties 
         const doctors = await db.collection('doctors').find({
             specialty: { 
                 $in: specialties.map(s => new RegExp(s, 'i')) 
