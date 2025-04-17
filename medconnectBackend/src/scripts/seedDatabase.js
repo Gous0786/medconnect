@@ -675,7 +675,12 @@ const doctors = [
 async function seedDatabase() {
     try {
         console.log('Connecting to MongoDB...');
-        const client = await MongoClient.connect(process.env.MONGODB_URI);
+        const client = new MongoClient(process.env.mongoUri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            tls: true
+          });
+          
         const db = client.db();
 
         // Drop existing doctors collection

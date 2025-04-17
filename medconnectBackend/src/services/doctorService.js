@@ -4,7 +4,12 @@ async function findDoctors(specialties) {
     try {
         console.log('Finding doctors for specialties:', specialties);
         
-        const client = await MongoClient.connect(process.env.MONGODB_URI);
+        const client = new MongoClient(process.env.mongoUri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            tls: true
+          });
+          
         const db = client.db();
 
         // Find doctors that match any of the specialties (case-insensitive)
@@ -43,7 +48,12 @@ async function findDoctors(specialties) {
 
 // Function to create a new doctor record
 async function createDoctorRecord(doctorData) {
-    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const client = new MongoClient(process.env.mongoUri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        tls: true
+      });
+      
     const db = client.db('medconnect');
 
     try {

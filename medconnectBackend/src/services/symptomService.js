@@ -1,7 +1,12 @@
 const { MongoClient, ObjectId } = require('mongodb');
 
 async function createSymptomRecord(symptomData) {
-    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const client = new MongoClient(process.env.mongoUri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        tls: true
+      });
+      
     const db = client.db('medconnect');
 
     try {
@@ -21,7 +26,12 @@ async function createSymptomRecord(symptomData) {
 }
 
 async function getSymptomById(symptomId) {
-    const client = await MongoClient.connect(process.env.MONGODB_URI);
+    const client = new MongoClient(process.env.mongoUri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        tls: true
+      });
+      
     const db = client.db('medconnect');
 
     try {
